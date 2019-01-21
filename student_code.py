@@ -55,6 +55,7 @@ class KnowledgeBase(object):
         for f in self.facts:
             if f.__eq__(fact):
                 # print("they are equal!")
+                bindings.append(Bindings())
                 continue
             # print(f.statement.terms)
             if match(fact.statement,f.statement):
