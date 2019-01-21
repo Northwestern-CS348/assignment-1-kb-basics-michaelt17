@@ -31,7 +31,7 @@ class KnowledgeBase(object):
         #     self.facts.append(fact)
         if isinstance(fact,Fact):
             self.facts.append(fact)
-        print("Asserting {!r}".format(fact))
+        # print("Asserting {!r}".format(fact))
         # print(self.facts[0])
 
     def kb_ask(self, fact):
@@ -43,8 +43,8 @@ class KnowledgeBase(object):
         Returns:
             ListOfBindings|False - ListOfBindings if result found, False otherwise
         """
-        print("Asking {!r}".format(fact))
-        print("")
+        # print("Asking {!r}".format(fact))
+        # print("")
 
         # if isinstance(fact,Fact):
         #     for f in self.facts:
@@ -62,7 +62,7 @@ class KnowledgeBase(object):
                 bindings.append(match(fact.statement,f.statement))
 
 
-        print("bindings is {!r}".format(bindings))
+        # print("bindings is {!r}".format(bindings))
 
         if len(bindings) == 0:
             return False

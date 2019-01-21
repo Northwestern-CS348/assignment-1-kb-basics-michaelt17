@@ -21,7 +21,7 @@ class KBTest(unittest.TestCase):
         print('Asking if', ask1)
         print("")
         answer = self.KB.kb_ask(ask1)
-        print("test1")
+        # print("test1")
         print(answer)
         self.assertEqual(answer[0].bindings, [])
         # self.assertEqual(answer.list_of_bindings[0][1][0], ask1)
@@ -30,7 +30,7 @@ class KBTest(unittest.TestCase):
         ask1 = read.parse_input("fact: (color littlebox red)")
         print(' Asking if', ask1)
         answer = self.KB.kb_ask(ask1)
-        print("test2")
+        # print("test2")
         print(answer)
         self.assertFalse(answer)
 
