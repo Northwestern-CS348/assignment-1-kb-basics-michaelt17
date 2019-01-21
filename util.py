@@ -1,8 +1,8 @@
 import logical_classes as lc
 
 def is_var(var):
-    """Check whether an element is a variable (either instance of Variable, 
-        instance of Term (where .term is a Variable) or a string starting with 
+    """Check whether an element is a variable (either instance of Variable,
+        instance of Term (where .term is a Variable) or a string starting with
         `'?'`, e.g. `'?d'`)
 
     Args:
@@ -30,10 +30,13 @@ def match(state1, state2, bindings=None):
     Returns:
         Bindings|False: either associated bindings or no match found
     """
+    # print("in match rn")
     if len(state1.terms) != len(state2.terms) or state1.predicate != state2.predicate:
+        # print(bindings)
         return False
     if not bindings:
         bindings = lc.Bindings()
+        # print(bindings)
     return match_recursive(state1.terms, state2.terms, bindings)
 
 def match_recursive(terms1, terms2, bindings):  # recursive...
@@ -47,7 +50,10 @@ def match_recursive(terms1, terms2, bindings):  # recursive...
     Returns:
         Bindings|False: either associated bindings or no match found
     """
+    # print("in match recursive rn")
+
     if len(terms1) == 0:
+        # print(bindings)
         return bindings
     if is_var(terms1[0]):
         if not bindings.test_and_bind(terms1[0], terms2[0]):
