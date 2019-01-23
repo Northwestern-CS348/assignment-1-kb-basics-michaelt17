@@ -6,8 +6,10 @@ fact: (isa box container)
 
 fact: (inst bigbox box)
 fact: (size bigbox big)
-fact: (color bigbox red)
+blah: (blah)
 
+fact: (color bigbox red)
+fact: (color bigbox red)
 fact: (inst littlebox box)
 fact: (size littlebox small)
 fact: (color littlebox blue)

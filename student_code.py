@@ -29,12 +29,14 @@ class KnowledgeBase(object):
         #         if f == fact:
         #             break
         #     self.facts.append(fact)
-        if isinstance(fact,Fact):
+        if isinstance(fact,Fact) and fact not in self.facts:
             self.facts.append(fact)
+
         # print("Asserting {!r}".format(fact))
         # print(self.facts[0])
 
     def kb_ask(self, fact):
+        # print(len(self.facts))
         """Ask if a fact is in the KB
 
         Args:
@@ -50,6 +52,9 @@ class KnowledgeBase(object):
         #     for f in self.facts:
         #         bindings.extend(fact,f)
 
+        if not isinstance(fact,Fact):
+            return False
+            
         bindings = []
 
         for f in self.facts:
